@@ -294,68 +294,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   Etapa 0 · Terreno
-   ============================================================ */
-.terreno { background: var(--bg-alt); overflow: hidden; }
-.terreno__inner {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-.terreno__text {
-  padding: 140px 80px 140px var(--px);
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-  justify-content: center;
-  flex: 1 1 460px;
-  min-width: 0;
-}
-.terreno__title {
-  font-size: clamp(50px, 6vw, 88px);
-  font-weight: 200;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-  color: var(--tx);
-  margin: 0;
-}
-.terreno__lead {
-  font-size: 21px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: rgba(var(--tx-rgb), 0.78);
-  margin: 0;
-  max-width: 560px;
-}
-.terreno__figure { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; }
-.terreno__amount {
-  font-size: clamp(40px, 5vw, 72px);
-  font-weight: 200;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: var(--tx);
-  white-space: nowrap;
-}
-.terreno__media {
-  position: relative;
-  min-height: 520px;
-  flex: 1 1 380px;
-  background: #6b6b64;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.terreno__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.06);
-}
-
-/* ============================================================
    Etapas 1–5 · tarjetas
    ============================================================ */
 .stages-intro {
@@ -562,7 +500,6 @@ a { color: inherit; text-decoration: none; }
     padding-top: 34px !important;
   }
   .cover__body { padding-bottom: 60px !important; }
-  .terreno__text { padding: 96px var(--px) !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
