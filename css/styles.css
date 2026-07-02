@@ -232,7 +232,7 @@ a { color: inherit; text-decoration: none; }
 .kpi4 {
   margin-top: 90px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 .kpi {
@@ -252,15 +252,8 @@ a { color: inherit; text-decoration: none; }
   color: var(--tx);
   white-space: nowrap;
 }
-.kpi__note {
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: rgba(var(--tx-rgb), 0.6);
-}
 .label--nowrap { white-space: nowrap; }
 .label--12 { font-size: 12px; }
-.ta-right { text-align: right; }
 
 /* ============================================================
    Estructura del flujo — barra de proporciones + tabla
@@ -344,12 +337,6 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   color: var(--tx);
   white-space: nowrap;
-}
-.terreno__note {
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(var(--tx-rgb), 0.6);
-  margin-top: 8px;
 }
 .terreno__media {
   position: relative;
@@ -448,10 +435,6 @@ a { color: inherit; text-decoration: none; }
   max-width: 420px;
 }
 .side-block { display: flex; flex-direction: column; gap: 6px; }
-.side-block--divided {
-  border-top: 1px solid rgba(var(--tx-rgb), 0.14);
-  padding-top: 26px;
-}
 .side__pct {
   font-size: clamp(84px, 10vw, 110px);
   font-weight: 200;
@@ -467,137 +450,10 @@ a { color: inherit; text-decoration: none; }
   color: var(--tx);
   white-space: nowrap;
 }
-.side__monthly {
-  font-size: 26px;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  color: rgba(var(--tx-rgb), 0.75);
-  white-space: nowrap;
-}
 
 /* ============================================================
-   Cronograma de desembolsos — línea de tiempo
+   Nota legal
    ============================================================ */
-.timeline { margin-top: 80px; display: flex; flex-direction: column; gap: 16px; }
-.tl-head {
-  display: grid;
-  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
-  gap: 44px;
-  align-items: end;
-}
-.tl-head__label {
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: rgba(var(--tx-rgb), 0.4);
-}
-.tl-axis { position: relative; height: 22px; }
-.tl-axis span {
-  position: absolute;
-  bottom: 0;
-  font-size: 13px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  color: rgba(var(--tx-rgb), 0.4);
-}
-
-.tl-row {
-  display: grid;
-  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
-  gap: 44px;
-  align-items: center;
-  border-top: 1px solid rgba(var(--tx-rgb), 0.08);
-  padding-top: 16px;
-}
-.tl-row__label { display: flex; flex-direction: column; gap: 5px; }
-.tl-row__title { font-size: 20px; font-weight: 400; color: var(--tx); }
-.tl-row__sub { font-size: 15px; font-weight: 300; color: rgba(var(--tx-rgb), 0.55); }
-.tl-track {
-  position: relative;
-  height: 52px;
-  background: repeating-linear-gradient(90deg,
-    rgba(var(--tx-rgb), 0.07) 0,
-    rgba(var(--tx-rgb), 0.07) 1px,
-    transparent 1px,
-    transparent 16.6667%);
-}
-.tl-bar {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 34px;
-  border-radius: 999px;
-}
-.tl-note {
-  font-size: 16px;
-  font-weight: 300;
-  color: rgba(var(--tx-rgb), 0.5);
-  margin-top: 20px;
-}
-
-.facts {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 20px;
-}
-.fact {
-  background: var(--bg);
-  box-shadow: var(--card-sh);
-  border: 1px solid rgba(var(--tx-rgb), 0.1);
-  border-radius: 14px;
-  padding: 32px 34px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.fact__value {
-  font-size: 32px;
-  font-weight: 200;
-  letter-spacing: -0.02em;
-  color: var(--tx);
-  white-space: nowrap;
-}
-.fact__note { font-size: 17px; font-weight: 300; color: rgba(var(--tx-rgb), 0.6); }
-
-/* ============================================================
-   Resumen global — tabla
-   ============================================================ */
-.summary-table { margin-top: 70px; display: flex; flex-direction: column; }
-.summary-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(110px, 180px) 56px minmax(150px, 220px);
-  gap: 18px;
-  align-items: baseline;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(var(--tx-rgb), 0.09);
-}
-.summary-row--head { padding: 18px 0; border-bottom: 1px solid rgba(var(--tx-rgb), 0.2); }
-.summary-row--total { padding: 34px 0 0 0; border-bottom: none; }
-
-.summary-row__concept { font-size: 21px; font-weight: 400; color: var(--tx); }
-.summary-row__cell { font-size: 18px; font-weight: 300; color: rgba(var(--tx-rgb), 0.6); }
-.summary-row__amount {
-  font-size: clamp(18px, 1.6vw, 21px);
-  font-weight: 400;
-  color: var(--tx);
-  text-align: right;
-  white-space: nowrap;
-}
-.summary-row--head .summary-row__amount { text-align: right; }
-
-.summary-row--total .summary-row__concept {
-  font-size: 25px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-.summary-row--total .summary-row__amount {
-  font-size: clamp(26px, 2.4vw, 36px);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-}
-
 .legal {
   font-size: 16px;
   font-weight: 300;
@@ -695,10 +551,7 @@ a { color: inherit; text-decoration: none; }
   :root { --px: 22px; }
   .sec { padding-top: 84px !important; padding-bottom: 84px !important; }
   .kpi4 { grid-template-columns: 1fr !important; }
-  .tl-head { display: none !important; }
-  .struct-row,
-  .summary-row,
-  .tl-row {
+  .struct-row {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
