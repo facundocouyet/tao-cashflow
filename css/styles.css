@@ -398,129 +398,57 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   Plan de trabajos · Obra Gruesa (Gantt de Ercon)
+   Interesados
    ============================================================ */
-.gantt-header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px 60px;
-  justify-content: space-between;
-  align-items: flex-end;
+.interesados-group { margin-top: 64px; display: flex; flex-direction: column; gap: 20px; }
+.interesados-group + .interesados-group { margin-top: 52px; }
+.interesados-group__title {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--tx);
 }
-.gantt-header__intro { display: flex; flex-direction: column; gap: 28px; flex: 1 1 560px; }
-.gantt-header__total { display: flex; flex-direction: column; gap: 8px; text-align: right; }
-.gantt-header__total-value {
-  font-size: clamp(40px, 4.2vw, 62px);
+.interesados-grid { display: grid; gap: 20px; }
+.interesados-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.interesados-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.icard {
+  background: var(--card);
+  box-shadow: var(--card-sh);
+  border: 1px solid rgba(var(--tx-rgb), 0.1);
+  border-radius: 14px;
+  padding: 34px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.icard__tag {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--tx);
+}
+.icard__tag--accent { background: rgba(var(--bar-rgb), 0.16); }
+.icard__tag--neutral { background: rgba(var(--tx-rgb), 0.08); }
+.icard__name {
+  font-size: 34px;
   font-weight: 200;
   letter-spacing: -0.02em;
+  color: var(--tx);
   line-height: 1;
-  color: var(--tx);
-  white-space: nowrap;
 }
-.gantt-header__total-value span {
-  font-size: 0.38em;
-  font-weight: 300;
-  color: rgba(var(--tx-rgb), 0.55);
-}
-
-.gantt-wrap { margin-top: 70px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.gantt {
-  min-width: 940px;
-  width: 100%;
-  border-collapse: collapse;
-  color: var(--tx);
-  font-weight: 200;
-}
-.gantt th,
-.gantt td { text-align: center; }
-.gantt thead th { border-bottom: 1px solid rgba(var(--tx-rgb), 0.28); padding: 0 0 8px; }
-.gantt .rbh {
-  text-align: left;
-  font-size: 11px;
-  letter-spacing: 2px;
-  opacity: 0.5;
-  padding-left: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.gantt .mh { width: 4.4%; }
-.gantt .mn { display: block; font-size: 14px; font-weight: 300; }
-.gantt .ml { display: block; font-size: 8px; letter-spacing: 0.8px; opacity: 0.45; margin-top: 2px; }
-.gantt .toth { font-size: 10px; letter-spacing: 2px; opacity: 0.5; width: 7.5%; }
-.gantt tbody tr { border-bottom: 1px solid rgba(var(--tx-rgb), 0.1); }
-.gantt .rb {
-  text-align: left;
-  font-size: 12px;
-  letter-spacing: 0.3px;
-  padding: 9px 2px;
-  white-space: nowrap;
-  opacity: 0.92;
-  font-weight: 300;
-}
-.gantt td.c { padding: 9px 2px; }
-.gantt .v { display: block; font-size: 11px; font-weight: 300; line-height: 1; }
-.gantt .p {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  opacity: 0.82;
-  margin-top: 4px;
-  letter-spacing: 0.3px;
-  color: var(--bar-strong);
-}
-.gantt .tot { font-size: 12px; font-weight: 300; border-left: 1px solid rgba(var(--tx-rgb), 0.1); }
-.gantt tfoot td { padding: 9px 2px; }
-.gantt .frow { border-top: 1px solid rgba(var(--tx-rgb), 0.28); }
-.gantt .flab {
-  text-align: left;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  opacity: 0.6;
-  padding-left: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.gantt .mm { font-size: 11px; font-weight: 300; }
-.gantt .aa { font-size: 10px; opacity: 0.6; }
-.gantt .pp2 { font-size: 10px; opacity: 0.75; }
-.gantt .ftot { font-size: 12px; font-weight: 300; border-left: 1px solid rgba(var(--tx-rgb), 0.1); }
-.gantt-note {
-  margin-top: 40px;
-  border-top: 1px solid rgba(var(--tx-rgb), 0.12);
-  padding-top: 26px;
+.icard__note {
   font-size: 15px;
-  letter-spacing: 0.2px;
-  opacity: 0.6;
   font-weight: 300;
-  line-height: 1.6;
-  max-width: 1100px;
-}
-.gantt-note b { font-weight: 500; opacity: 0.85; }
-.gantt-foot2 {
-  margin-top: 16px;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  opacity: 0.4;
-  font-weight: 300;
-}
-
-/* ============================================================
-   Posibles clientes
-   ============================================================ */
-.clients {
-  margin-top: 70px;
-  columns: 320px;
-  column-gap: 60px;
-}
-.client {
-  break-inside: avoid;
-  border-top: 1px solid rgba(var(--tx-rgb), 0.09);
-  padding: 12px 0;
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--tx);
+  color: rgba(var(--tx-rgb), 0.6);
+  line-height: 1.5;
 }
 
 /* ============================================================
@@ -612,6 +540,8 @@ a { color: inherit; text-decoration: none; }
   .sec { padding-top: 84px !important; padding-bottom: 84px !important; }
   .kpi4 { grid-template-columns: 1fr !important; }
   .stats { grid-template-columns: repeat(2, 1fr) !important; }
+  .interesados-grid--4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .interesados-grid--2 { grid-template-columns: 1fr !important; }
   .struct-row {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
