@@ -215,7 +215,7 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
 }
 .total__figure {
-  font-size: clamp(46px, 8vw, 128px);
+  font-size: clamp(38px, 5.5vw, 84px);
   font-weight: 200;
   letter-spacing: -0.04em;
   line-height: 0.95;
@@ -382,7 +382,7 @@ a { color: inherit; text-decoration: none; }
 }
 .side-block { display: flex; flex-direction: column; gap: 6px; }
 .side__pct {
-  font-size: clamp(84px, 10vw, 110px);
+  font-size: clamp(56px, 6.5vw, 76px);
   font-weight: 200;
   letter-spacing: -0.04em;
   line-height: 0.95;
